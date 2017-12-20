@@ -19,7 +19,7 @@ class ManaCostTest < Test::Unit::TestCase
     end
 
     test 'Generic Mana' do
-      assert_true(ManaCost.convert('(0)') == 1)
+      assert_true(ManaCost.convert('(0)') == 0)
       assert_true(ManaCost.convert('(1)') == 1)
       assert_true(ManaCost.convert('(2)') == 2)
       assert_true(ManaCost.convert('(3)') == 3)
@@ -49,16 +49,16 @@ class ManaCostTest < Test::Unit::TestCase
     end
 
     test 'Multicolored' do
-      assert_true(ManaCost.convert('(白)(青)') == 1)
-      assert_true(ManaCost.convert('(青)(黒)') == 1)
-      assert_true(ManaCost.convert('(黒)(赤)') == 1)
-      assert_true(ManaCost.convert('(赤)(緑)') == 1)
-      assert_true(ManaCost.convert('(緑)(白)') == 1)
-      assert_true(ManaCost.convert('(白)(黒)') == 1)
-      assert_true(ManaCost.convert('(青)(赤)') == 1)
-      assert_true(ManaCost.convert('(黒)(緑)') == 1)
-      assert_true(ManaCost.convert('(赤)(白)') == 1)
-      assert_true(ManaCost.convert('(緑)(青)') == 1)
+      assert_true(ManaCost.convert('(白)(青)') == 2)
+      assert_true(ManaCost.convert('(青)(黒)') == 2)
+      assert_true(ManaCost.convert('(黒)(赤)') == 2)
+      assert_true(ManaCost.convert('(赤)(緑)') == 2)
+      assert_true(ManaCost.convert('(緑)(白)') == 2)
+      assert_true(ManaCost.convert('(白)(黒)') == 2)
+      assert_true(ManaCost.convert('(青)(赤)') == 2)
+      assert_true(ManaCost.convert('(黒)(緑)') == 2)
+      assert_true(ManaCost.convert('(赤)(白)') == 2)
+      assert_true(ManaCost.convert('(緑)(青)') == 2)
     end
 
   end
