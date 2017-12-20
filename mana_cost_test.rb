@@ -29,7 +29,7 @@ class ManaCostTest < Test::Unit::TestCase
 
     test 'Hybrid Mana Symbol' do
       assert_true(ManaCost.convert('(赤/白)') == 1)
-      assert_true(ManaCost.convert('(２/白)') == 2)
+      assert_true(ManaCost.convert('(2/白)') == 2)
     end
 
     test 'Phyrexian Mana' do
