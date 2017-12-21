@@ -77,6 +77,12 @@ class ManaCostTest < Test::Unit::TestCase
       assert_equal(2, ManaCost.convert('(緑)(青)'))
     end
 
+    test 'X Mana' do
+      assert_equal(0, ManaCost.convert('(X)'))
+      assert_equal(0, ManaCost.convert('(X)(X)'))
+      assert_equal(0, ManaCost.convert('(X)(X)(X)'))
+    end
+
   end
 
 end
