@@ -6,6 +6,8 @@ class ManaCost
     end
 
     total = 0
+    text.tr!('Ａ-Ｚ', 'A-Z')
+    text.tr!('０-９', '0-9')
     costs = text.scan(/\([^\(\)]+\)/)
 
     costs.each do |cost|

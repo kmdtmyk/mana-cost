@@ -25,6 +25,17 @@ class ManaCostTest < Test::Unit::TestCase
       assert_equal(3, ManaCost.convert('(3)'))
       assert_equal(10, ManaCost.convert('(10)'))
       assert_equal(15, ManaCost.convert('(15)'))
+      assert_equal(1000000, ManaCost.convert('(1000000)'))
+    end
+
+    test 'Generic Mana (double-byte character)' do
+      assert_equal(0, ManaCost.convert('(０)'))
+      assert_equal(1, ManaCost.convert('(１)'))
+      assert_equal(2, ManaCost.convert('(２)'))
+      assert_equal(3, ManaCost.convert('(３)'))
+      assert_equal(10, ManaCost.convert('(１０)'))
+      assert_equal(15, ManaCost.convert('(１５)'))
+      assert_equal(1000000, ManaCost.convert('(１００００００)'))
     end
 
     test 'Hybrid Mana Symbol' do
@@ -81,6 +92,12 @@ class ManaCostTest < Test::Unit::TestCase
       assert_equal(0, ManaCost.convert('(X)'))
       assert_equal(0, ManaCost.convert('(X)(X)'))
       assert_equal(0, ManaCost.convert('(X)(X)(X)'))
+    end
+
+    test 'X Mana (double-byte character)' do
+      assert_equal(0, ManaCost.convert('(Ｘ)'))
+      assert_equal(0, ManaCost.convert('(Ｘ)(Ｘ)'))
+      assert_equal(0, ManaCost.convert('(Ｘ)(Ｘ)(Ｘ)'))
     end
 
   end
